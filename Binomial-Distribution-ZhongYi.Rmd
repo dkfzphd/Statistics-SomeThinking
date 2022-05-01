@@ -1,0 +1,57 @@
+---
+title: "Untitled"
+author: "ManBuXiaoCun"
+date: '2022-04-30'
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Binomial Distribution
+If prob = 0.5 (pureguess)
+```{r}
+success.times <- 1:36
+
+probability.acc <- pbinom(q = success.times, size = 36, prob = 0.5)
+
+plot(success.times, 1 - probability.acc,
+  pch = 19, col = "blue",
+  xlab = "Times of Success (Cumulative)",
+  ylab = "Probability of Success P( x < k )"
+)
+abline(v = 28, col = "red")
+
+pureguess.prob <- 1 - pbinom(q = 28, size = 36, prob = 0.5)
+```
+
+If a 95% probability of winning the competition is guaranteed, then the required probability of correct diagnosis is prob.real
+```{r}
+prob.real <- seq(0, 1, by = 0.01)
+probability.succ <- 1 - pbinom(q = 28, size = 36, prob = prob.real)
+plot(prob.real, probability.succ,
+  pch = 19,
+  col = "red",
+  xlab = "Required probability (Diagnosis Accuracy)",
+  ylab = "Probability of Winning the Challenge",
+  xlim = c(0.7, 1)
+)
+abline(h = 0.95, col = "blue")
+```
+
+
+
+
+
+
+
+
+
+
+
+
