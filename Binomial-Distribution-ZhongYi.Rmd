@@ -13,6 +13,11 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+# Set R warning() in English 
+Sys.setenv(LANG = "en")
+```
+
 Binomial Distribution
 If prob = 0.5 (pureguess)
 ```{r}
