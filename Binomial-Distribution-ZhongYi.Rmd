@@ -44,6 +44,9 @@ plot(prob.real, probability.succ,
 abline(h = 0.95, col = "blue")
 ```
 
+```{r}
+sessionInfo()
+```
 
 
 
